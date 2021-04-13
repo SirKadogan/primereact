@@ -492,6 +492,34 @@ var TableBody = /*#__PURE__*/function (_Component) {
       }
     }
   }, {
+    key: "findEditingRowIndex",
+    value: function findEditingRowIndex(row) {
+      var index = -1;
+
+      if (this.props.editingRows) {
+        for (var i = 0; i < this.props.editingRows.length; i++) {
+          if (_ObjectUtils.default.equals(this.props.editingRows[i], row)) {
+            index = i;
+            break;
+          }
+        }
+      }
+
+      return index;
+    }
+  }, {
+    key: "isRowEditing",
+    value: function isRowEditing(row) {
+      var dataKey = this.props.dataKey;
+
+      if (dataKey) {
+        var dataKeyValue = String(_ObjectUtils.default.resolveFieldData(row, dataKey));
+        return this.props.editingRows && this.props.editingRows[dataKeyValue] != null;
+      } else {
+        return this.findEditingRowIndex(row) !== -1;
+      }
+    }
+  }, {
     key: "isSelectionEnabled",
     value: function isSelectionEnabled() {
       if (this.props.selectionMode || this.props.frozenSelectionMode != null) {
@@ -645,6 +673,8 @@ var TableBody = /*#__PURE__*/function (_Component) {
 
           var expanded = _this2.isRowExpanded(rowData);
 
+          var editing = _this2.isRowEditing(rowData);
+
           var selected = selectionEnabled ? _this2.isSelected(_this2.props.value[i]) : false;
 
           var contextMenuSelected = _this2.isContextMenuSelected(rowData);
@@ -723,6 +753,7 @@ var TableBody = /*#__PURE__*/function (_Component) {
               virtualScroll: _this2.props.virtualScroll,
               virtualRowHeight: _this2.props.virtualRowHeight,
               editMode: _this2.props.editMode,
+              editing: editing,
               rowEditorValidator: _this2.props.rowEditorValidator,
               onRowEditInit: _this2.props.onRowEditInit,
               onRowEditSave: _this2.props.onRowEditSave,

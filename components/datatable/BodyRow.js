@@ -60,9 +60,6 @@ var BodyRow = /*#__PURE__*/function (_Component) {
     _classCallCheck(this, BodyRow);
 
     _this = _super.call(this, props);
-    _this.state = {
-      editing: false
-    };
     _this.onClick = _this.onClick.bind(_assertThisInitialized(_this));
     _this.onDoubleClick = _this.onDoubleClick.bind(_assertThisInitialized(_this));
     _this.onTouchEnd = _this.onTouchEnd.bind(_assertThisInitialized(_this));
@@ -239,9 +236,6 @@ var BodyRow = /*#__PURE__*/function (_Component) {
         });
       }
 
-      this.setState({
-        editing: true
-      });
       event.preventDefault();
     }
   }, {
@@ -256,13 +250,12 @@ var BodyRow = /*#__PURE__*/function (_Component) {
       if (this.props.onRowEditSave) {
         this.props.onRowEditSave({
           originalEvent: event,
-          data: this.props.rowData
+          data: this.props.rowData,
+          index: this.props.rowIndex,
+          valid: valid
         });
       }
 
-      this.setState({
-        editing: !valid
-      });
       event.preventDefault();
     }
   }, {
@@ -276,9 +269,6 @@ var BodyRow = /*#__PURE__*/function (_Component) {
         });
       }
 
-      this.setState({
-        editing: false
-      });
       event.preventDefault();
     }
   }, {
@@ -334,7 +324,7 @@ var BodyRow = /*#__PURE__*/function (_Component) {
           responsive: this.props.responsive,
           selected: this.props.selected,
           editMode: this.props.editMode,
-          editing: this.state.editing,
+          editing: this.props.editing,
           onRowEditInit: this.onRowEditInit,
           onRowEditSave: this.onRowEditSave,
           onRowEditCancel: this.onRowEditCancel,

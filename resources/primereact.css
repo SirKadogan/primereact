@@ -3378,6 +3378,123 @@ input[type=text]::-ms-clear {
         display: block;
     }
 }
+.p-organizationchart .p-organizationchart-table {
+    border-spacing: 0;
+    border-collapse: separate;
+    margin: 0 auto;
+}
+
+.p-organizationchart .p-organizationchart-table > tbody > tr > td {
+    text-align: center;
+    vertical-align: top;
+    padding: 0;
+    padding: 0 .75em;
+}
+
+.p-organizationchart .p-organizationchart-node-content {
+    padding: .5em .75em;
+    display: inline-block;
+    position: relative;
+}
+
+.p-organizationchart .p-organizationchart-node-content .p-node-toggler {
+    position: absolute;
+    bottom: -9px;
+    margin-left: -8px;
+    z-index: 2;
+    left: 50%;
+    user-select: none;
+    -moz-user-select: none;
+    -webkit-user-select: none;
+}
+
+.p-organizationchart .p-organizationchart-line-down {
+    margin: 0 auto;
+    height: 20px;
+    width: 1px;
+    float: none;
+}
+
+.p-organizationchart .p-organizationchart-line-right {
+    float: none;
+    border-radius: 0px;
+}
+
+.p-organizationchart .p-organizationchart-line-left {
+    float: none;
+    border-radius: 0;
+}
+
+.p-organizationchart .p-organizationchart-node-content.p-organizationchart-selectable-node {
+    cursor: pointer;
+}
+.p-overlaypanel {
+    padding: 0;
+    margin: 0;
+    position: absolute;
+    display: none;
+    margin-top: 10px;
+}
+
+.p-overlaypanel-flipped {
+    margin-top: 0;
+    margin-bottom: 10px;
+}
+
+.p-overlaypanel-content {
+    padding: 0.5em 1em;
+}
+
+.p-overlaypanel-close {
+    position: absolute;
+    top: -1em;
+    right: -1em;
+    width: 2em;
+    height: 2em;
+    line-height: 2em;
+    text-align: center;
+    -moz-border-radius: 100%;
+    -webkit-border-radius: 100%;
+    border-radius: 100%;
+}
+
+.p-overlaypanel-close-icon {
+    line-height: inherit;
+}
+
+.p-overlaypanel:after, .p-overlaypanel:before {
+	bottom: 100%;
+	left: 1.25em;
+	border: solid transparent;
+	content: " ";
+	height: 0;
+	width: 0;
+	position: absolute;
+	pointer-events: none;
+}
+
+.p-overlaypanel:after {
+	border-width: 8px;
+	margin-left: -8px;
+}
+
+.p-overlaypanel:before {
+	border-width: 10px;
+	margin-left: -10px;
+}
+
+.p-overlaypanel-flipped:after, .p-overlaypanel-flipped:before {
+    bottom: auto;
+    top: 100%;
+}
+
+.p-overlaypanel.p-overlaypanel-flipped:after {
+    border-bottom-color: transparent;
+}
+
+.p-overlaypanel.p-overlaypanel-flipped:before {
+    border-bottom-color: transparent
+}
 .p-paginator {
     margin: 0;
     text-align: center;
@@ -3477,73 +3594,6 @@ input[type=text]::-ms-clear {
     width: auto;
     height: auto;
 }
-.p-overlaypanel {
-    padding: 0;
-    margin: 0;
-    position: absolute;
-    display: none;
-    margin-top: 10px;
-}
-
-.p-overlaypanel-flipped {
-    margin-top: 0;
-    margin-bottom: 10px;
-}
-
-.p-overlaypanel-content {
-    padding: 0.5em 1em;
-}
-
-.p-overlaypanel-close {
-    position: absolute;
-    top: -1em;
-    right: -1em;
-    width: 2em;
-    height: 2em;
-    line-height: 2em;
-    text-align: center;
-    -moz-border-radius: 100%;
-    -webkit-border-radius: 100%;
-    border-radius: 100%;
-}
-
-.p-overlaypanel-close-icon {
-    line-height: inherit;
-}
-
-.p-overlaypanel:after, .p-overlaypanel:before {
-	bottom: 100%;
-	left: 1.25em;
-	border: solid transparent;
-	content: " ";
-	height: 0;
-	width: 0;
-	position: absolute;
-	pointer-events: none;
-}
-
-.p-overlaypanel:after {
-	border-width: 8px;
-	margin-left: -8px;
-}
-
-.p-overlaypanel:before {
-	border-width: 10px;
-	margin-left: -10px;
-}
-
-.p-overlaypanel-flipped:after, .p-overlaypanel-flipped:before {
-    bottom: auto;
-    top: 100%;
-}
-
-.p-overlaypanel.p-overlaypanel-flipped:after {
-    border-bottom-color: transparent;
-}
-
-.p-overlaypanel.p-overlaypanel-flipped:before {
-    border-bottom-color: transparent
-}
 .p-panel {
 	padding: 0.2em;
 }
@@ -3576,56 +3626,6 @@ input[type=text]::-ms-clear {
 	border-width: 1px 0 0;
 	padding: .25em .5em;
 	text-align:left;
-}
-.p-organizationchart .p-organizationchart-table {
-    border-spacing: 0;
-    border-collapse: separate;
-    margin: 0 auto;
-}
-
-.p-organizationchart .p-organizationchart-table > tbody > tr > td {
-    text-align: center;
-    vertical-align: top;
-    padding: 0;
-    padding: 0 .75em;
-}
-
-.p-organizationchart .p-organizationchart-node-content {
-    padding: .5em .75em;
-    display: inline-block;
-    position: relative;
-}
-
-.p-organizationchart .p-organizationchart-node-content .p-node-toggler {
-    position: absolute;
-    bottom: -9px;
-    margin-left: -8px;
-    z-index: 2;
-    left: 50%;
-    user-select: none;
-    -moz-user-select: none;
-    -webkit-user-select: none;
-}
-
-.p-organizationchart .p-organizationchart-line-down {
-    margin: 0 auto;
-    height: 20px;
-    width: 1px;
-    float: none;
-}
-
-.p-organizationchart .p-organizationchart-line-right {
-    float: none;
-    border-radius: 0px;
-}
-
-.p-organizationchart .p-organizationchart-line-left {
-    float: none;
-    border-radius: 0;
-}
-
-.p-organizationchart .p-organizationchart-node-content.p-organizationchart-selectable-node {
-    cursor: pointer;
 }
 .p-panelmenu {
     width: auto;
